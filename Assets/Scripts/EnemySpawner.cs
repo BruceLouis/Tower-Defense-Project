@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-    [Tooltip("size of the array represents number of waves")] [SerializeField] int[] numEnemies;
+    [Tooltip("size of the array represents number of waves")] [SerializeField] int[] numEnemies = new int[3];
+    [Tooltip("element in the array represents wave number")] [SerializeField] [Range(0.25f, 10f)] float[] spawnRate;
+    [Tooltip("element in the array represents wave number")] [SerializeField] Enemy[] enemies;
 
-    [SerializeField] [Range (0.25f, 10f)] float spawnRate;
-    [SerializeField] Enemy enemies;
     [SerializeField] Transform spawnPosition;
     [SerializeField] float spawnStartDelay, waveDelay;    
 
@@ -25,19 +25,19 @@ public class EnemySpawner : MonoBehaviour {
     IEnumerator SpawnStartDelay(float time)
     {
         yield return new WaitForSecondsRealtime(time);
-        StartCoroutine(SpawnEnemies(spawnRate));
+        StartCoroutine(SpawnEnemies());
     }
 
-    IEnumerator SpawnEnemies(float spawnRate)
+    IEnumerator SpawnEnemies()
     {
         for (int i = 0; i < numEnemies.Length; i++)
         {
             while (numEnemies[i] > 0)
             {
-                Enemy enemy = Instantiate(enemies, spawnPosition.position, Quaternion.identity) as Enemy;
+                Enemy enemy = Instantiate(enemies[i], spawnPosition.position, Quaternion.identity) as Enemy;
                 enemy.transform.parent = transform;
                 numEnemies[i]--;
-                yield return new WaitForSecondsRealtime(spawnRate);
+                yield return new WaitForSecondsRealtime(spawnRate[i]);
             }
             yield return new WaitForSecondsRealtime(waveDelay);
         }

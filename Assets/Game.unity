@@ -2369,6 +2369,7 @@ Transform:
   - {fileID: 1716973338}
   - {fileID: 393868502}
   - {fileID: 1110118473}
+  - {fileID: 311904900}
   - {fileID: 1137912755}
   - {fileID: 2128734181}
   - {fileID: 647918388}
@@ -2376,14 +2377,13 @@ Transform:
   - {fileID: 1450011735}
   - {fileID: 232439716}
   - {fileID: 461900865}
+  - {fileID: 780900723}
   - {fileID: 851649861}
   - {fileID: 102477537}
-  - {fileID: 416526254}
+  - {fileID: 1172236321}
   - {fileID: 1551174043}
   - {fileID: 1520266941}
-  - {fileID: 165136584}
   - {fileID: 1582296919}
-  - {fileID: 1172236321}
   - {fileID: 531471221}
   - {fileID: 1070874032}
   - {fileID: 225518848}
@@ -2394,7 +2394,7 @@ Transform:
   - {fileID: 1003732397}
   - {fileID: 122750393}
   - {fileID: 422546251}
-  - {fileID: 311904900}
+  - {fileID: 165136584}
   - {fileID: 1588822950}
   - {fileID: 1465215848}
   - {fileID: 1302346922}
@@ -2402,7 +2402,7 @@ Transform:
   - {fileID: 1011266870}
   - {fileID: 824535372}
   - {fileID: 1525646954}
-  - {fileID: 780900723}
+  - {fileID: 416526254}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5026,9 +5026,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39057480c28bf024591c745b56d3d576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemies: 0a0000000a0000000a000000
-  spawnRate: 2
-  enemies: {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  numEnemies: 0a0000000a00000014000000140000001e000000
+  spawnRate:
+  - 3
+  - 2
+  - 2
+  - 1.5
+  - 1
+  enemies:
+  - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
+  - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
   spawnPosition: {fileID: 1808118777}
   spawnStartDelay: 5
   waveDelay: 3
