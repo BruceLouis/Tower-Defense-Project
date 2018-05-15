@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 4416484022322176}
-  bullets: {fileID: 1468702757441348, guid: a555541fbc792104da222835da83dbed, type: 2}
+  bullets: {fileID: 1055127428466314, guid: 9e40330f22ab5cb47b2f67f05789bd15, type: 2}
   bulletPower: 3000
   yOffset: 3.25
   rateOfFire: 1
   cost: 50
-  range: 15.1
+  range: 28.8

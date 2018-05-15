@@ -7,7 +7,7 @@ public class Tower : MonoBehaviour {
 
     [SerializeField] Transform objectToPan;
     [SerializeField] GameObject bullets;
-    [SerializeField] float bulletPower, yOffset, rateOfFire, cost;
+    [SerializeField] float bulletPower, rateOfFire, cost, yOffset;
     [SerializeField] [Range(0f, 100f)] float range;
     
     private Transform targetEnemy;
