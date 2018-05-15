@@ -957,8 +957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fc4c684674e584bb3d7356bd43d59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 114996041873681812, guid: 8e528ec860625284d99405cd0a7797ac,
-    type: 2}
+  towers:
+  - {fileID: 114996041873681812, guid: 8e528ec860625284d99405cd0a7797ac, type: 2}
+  - {fileID: 114002693532008374, guid: 14b55f5256f6dcf47ace9661c78b5f34, type: 2}
 --- !u!1001 &225518847
 Prefab:
   m_ObjectHideFlags: 0
@@ -4476,6 +4477,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114274081546468384, guid: 04a7923697625364b9691c00fa767a53,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 210890316}
+    - target: {fileID: 114975901251387050, guid: 04a7923697625364b9691c00fa767a53,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 210890316}
     - target: {fileID: 224179413435976402, guid: 04a7923697625364b9691c00fa767a53,
         type: 2}
       propertyPath: m_AnchorMin.x

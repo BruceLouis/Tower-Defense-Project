@@ -7,14 +7,24 @@ public class TowerButton : MonoBehaviour {
 
     [SerializeField] Text costText;
     [SerializeField] Tower tower;
+    [SerializeField] Image image;
+    [SerializeField] int towerChoice;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         costText.text = "Cost: " + tower.Cost.ToString();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void Update()
+    {
+        if (FindObjectOfType<TowerFactory>().GetTowerChoice() == towerChoice)
+        {
+            image.color = Color.blue;
+        }
+        else
+        {
+            image.color = Color.clear;
+        }
+    }
 }
