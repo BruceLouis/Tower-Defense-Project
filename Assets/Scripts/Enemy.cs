@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 
     void Start()
     {
-        soundPlayedAtCamera = Camera.main.transform.position;
+        soundPlayedAtCamera = Camera.main.transform.position + new Vector3(0f, 0f, -10f);
     }
 
     void Update()

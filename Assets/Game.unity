@@ -4477,16 +4477,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114274081546468384, guid: 04a7923697625364b9691c00fa767a53,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 210890316}
-    - target: {fileID: 114975901251387050, guid: 04a7923697625364b9691c00fa767a53,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 210890316}
     - target: {fileID: 224179413435976402, guid: 04a7923697625364b9691c00fa767a53,
         type: 2}
       propertyPath: m_AnchorMin.x
@@ -4515,6 +4505,10 @@ Prefab:
     - target: {fileID: 224873519585337412, guid: 04a7923697625364b9691c00fa767a53,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720254225128380, guid: 04a7923697625364b9691c00fa767a53, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4678,17 +4672,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39057480c28bf024591c745b56d3d576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numEnemies: 0a0000000a00000014000000140000001e000000
+  numEnemies: 0a0000000a00000014000000140000001e00000014000000140000001e0000001e00000032000000
   spawnRate:
   - 3
   - 2
   - 2
   - 1.5
   - 1
+  - 2
+  - 1.5
+  - 1.5
+  - 1
+  - 0.5
   enemies:
   - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
   - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
   - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  - {fileID: 114615327220352268, guid: 015de21de9150ad4bbbda369f1f49301, type: 2}
+  - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
+  - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
+  - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
   - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
   - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
   spawnPosition: {fileID: 1808118777}

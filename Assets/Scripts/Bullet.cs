@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    [SerializeField] float damage;
+    private float damage;
 
     void OnTriggerEnter(Collider collider)
     {
@@ -14,6 +14,12 @@ public class Bullet : MonoBehaviour {
             enemy.GotHit(damage);
         }
         Destroy(gameObject);
+    }
+
+    public float Damage
+    {
+        get { return damage; }
+        set { damage = value; }
     }
 
 }

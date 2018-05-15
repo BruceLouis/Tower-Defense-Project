@@ -18,7 +18,7 @@ public class TowerButton : MonoBehaviour {
 
     void Update()
     {
-        if (FindObjectOfType<TowerFactory>().GetTowerChoice() == towerChoice)
+        if (FindObjectOfType<TowerFactory>().TowerChoice == towerChoice)
         {
             image.color = Color.blue;
         }
@@ -26,5 +26,10 @@ public class TowerButton : MonoBehaviour {
         {
             image.color = Color.clear;
         }
+    }
+
+    public void SelectTower()
+    {
+        FindObjectOfType<TowerFactory>().TowerChoice = towerChoice;
     }
 }

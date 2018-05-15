@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Tower : MonoBehaviour {
 
     [SerializeField] Transform objectToPan;
-    [SerializeField] GameObject bullets;
-    [SerializeField] float bulletPower, rateOfFire, cost, yOffset;
+    [SerializeField] Bullet bullets;
+    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;
     [SerializeField] [Range(0f, 100f)] float range;
     
     private Transform targetEnemy;
@@ -70,8 +70,9 @@ public class Tower : MonoBehaviour {
     {
         isShooting = true;
         Vector3 offset = new Vector3(0f, yOffset, 0f);
-        GameObject bullet = Instantiate(bullets, objectToPan.transform.position + offset, objectToPan.transform.localRotation) as GameObject;
-        bullet.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * bulletPower);
+        Bullet bullet = Instantiate(bullets, objectToPan.transform.position + offset, objectToPan.transform.localRotation) as Bullet;
+        bullet.Damage = bulletPower;
+        bullet.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * bulletSpeed);
         yield return new WaitForSecondsRealtime(rateOfFire);
         isShooting = false;
     }

@@ -22,11 +22,6 @@ public class TowerFactory : MonoBehaviour {
         money = FindObjectOfType<Money>();
         towerChoice = 0;
     }
-	
-    public void SelectTower(int choice)
-    {
-        towerChoice = choice;
-    }
 
     public void AddTower(Tile tile)
     {
@@ -38,8 +33,9 @@ public class TowerFactory : MonoBehaviour {
         tile.IsSpotTaken = true;
     }
 
-    public int GetTowerChoice()
+    public int TowerChoice
     {
-        return towerChoice;
+        get { return towerChoice; }
+        set { towerChoice = value; }
     }
 }

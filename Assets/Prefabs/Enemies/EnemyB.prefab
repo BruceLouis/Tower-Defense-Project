@@ -496,7 +496,7 @@ MonoBehaviour:
   hitPoints: 70
   damage: 15
   scoreValue: 25
-  cashValue: 15
+  cashValue: 10
   hitSound: {fileID: 8300000, guid: aa00a4d67c88b0c41a244b85c49de6f5, type: 3}
   deathSound: {fileID: 8300000, guid: 5b9de2ae2f596e149b8055f3e55db16a, type: 3}
   goalSound: {fileID: 8300000, guid: 8bae6522c023b094eb07939fda81cb1f, type: 3}
