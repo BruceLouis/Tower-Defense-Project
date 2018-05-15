@@ -5,45 +5,41 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
+    [Tooltip("size of the array represents number of waves")] [SerializeField] int[] numEnemies;
+
     [SerializeField] [Range (0.25f, 10f)] float spawnRate;
     [SerializeField] Enemy enemies;
     [SerializeField] Transform spawnPosition;
-    [SerializeField] int numEnemies;
-    [SerializeField] float spawnStartDelay;
-    private bool isSpawning, canStartSpawning;    
+    [SerializeField] float spawnStartDelay, waveDelay;    
 
 	// Use this for initialization
 	void Start () {
-        isSpawning = false;
-        canStartSpawning = false;
         StartCoroutine(SpawnStartDelay(spawnStartDelay));
-	}
+    }
 
 
     // Update is called once per frame
     void Update () {
-        if (!isSpawning && canStartSpawning)
-        {
-            StartCoroutine(SpawnEnemies(spawnRate));
-        }
     }
 
     IEnumerator SpawnStartDelay(float time)
     {
         yield return new WaitForSecondsRealtime(time);
-        canStartSpawning = true;
+        StartCoroutine(SpawnEnemies(spawnRate));
     }
 
     IEnumerator SpawnEnemies(float spawnRate)
     {
-        while (numEnemies > 0)
+        for (int i = 0; i < numEnemies.Length; i++)
         {
-            isSpawning = true;
-            Enemy enemy = Instantiate(enemies, spawnPosition.position, Quaternion.identity) as Enemy;
-            enemy.transform.parent = transform;
-            numEnemies--;
-            yield return new WaitForSecondsRealtime(spawnRate);
-            isSpawning = false;
+            while (numEnemies[i] > 0)
+            {
+                Enemy enemy = Instantiate(enemies, spawnPosition.position, Quaternion.identity) as Enemy;
+                enemy.transform.parent = transform;
+                numEnemies[i]--;
+                yield return new WaitForSecondsRealtime(spawnRate);
+            }
+            yield return new WaitForSecondsRealtime(waveDelay);
         }
     }
 }
