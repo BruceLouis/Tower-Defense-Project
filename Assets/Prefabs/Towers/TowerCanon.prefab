@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4042083736985988}
   - component: {fileID: 114996041873681812}
   m_Layer: 29
-  m_Name: TowerCanon
+  m_Name: TowerCanonA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,6 +435,5 @@ MonoBehaviour:
   bulletPower: 3000
   rateOfFire: 1
   cost: 50
-  xOffset: 1
   yOffset: -0.75
   range: 15

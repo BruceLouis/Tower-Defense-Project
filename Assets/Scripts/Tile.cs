@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class Tile : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!spotTaken)
+            if (!spotTaken && !EventSystem.current.IsPointerOverGameObject()) //event system to make sure tower don't get placed when in menu
             {
                 FindObjectOfType<TowerFactory>().AddTower(this);
             }

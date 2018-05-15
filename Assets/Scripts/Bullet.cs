@@ -12,7 +12,6 @@ public class Bullet : MonoBehaviour {
         if (enemy)
         {
             enemy.GotHit(damage);
-            enemy.IsEnemyDead();
         }
         Destroy(gameObject);
     }

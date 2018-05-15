@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] ParticleSystem enemyExplosion, hitExplosion, goalExplosion;
     [SerializeField] float hitPoints, damage, scoreValue, cashValue;
-    [SerializeField] AudioClip hitSound, deathSound;
+    [SerializeField] AudioClip hitSound, deathSound, goalSound;
 
     private Vector3 soundPlayedAtCamera;
 
@@ -16,14 +16,12 @@ public class Enemy : MonoBehaviour {
         soundPlayedAtCamera = Camera.main.transform.position;
     }
 
-    public void GotHit(float damageDealt)
+    void Update()
     {
-        AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
-        Instantiate(hitExplosion, transform.position, Quaternion.identity);
-        hitPoints -= damageDealt;
+        IsEnemyDead();
     }
 
-    public void IsEnemyDead()
+    void IsEnemyDead()
     {
         if (hitPoints <= 0f)
         {
@@ -33,10 +31,18 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void GotHit(float damageDealt)
+    {
+        AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
+        Instantiate(hitExplosion, transform.position, Quaternion.identity);
+        hitPoints -= damageDealt;
+    }
+
     public void EnemyBlowsUp(bool didHeGetToGoalLine)
     {
         if (didHeGetToGoalLine)
         {
+            AudioSource.PlayClipAtPoint(goalSound, soundPlayedAtCamera);
             Instantiate(goalExplosion, transform.position, Quaternion.identity);
         }
         else
