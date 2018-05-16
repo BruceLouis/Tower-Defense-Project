@@ -31,10 +31,13 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void GotHit(float damageDealt)
+    public void GotHit(float damageDealt, bool isSFXOn)
     {
-        AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
-        Instantiate(hitExplosion, transform.position, Quaternion.identity);
+        if (isSFXOn)
+        {
+            AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
+        }
+        Instantiate(hitExplosion, transform.position + new Vector3(0f, 0f, 2f), Quaternion.identity);
         hitPoints -= damageDealt;
     }
 

@@ -242,7 +242,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975644477902304}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.019630114, y: -0.85094434, z: 0.031882994, w: 0.52391976}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -432,9 +432,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 4931507841738020}
   bullets: {fileID: 114221266184942156, guid: 9e40330f22ab5cb47b2f67f05789bd15, type: 2}
+  laserLine: {fileID: 0}
+  machineGunRifles: []
   bulletSpeed: 3000
   bulletPower: 10
   rateOfFire: 1
   cost: 50
-  yOffset: -0.75
-  range: 15
+  yOffset: 0
+  range: 30
+  laserSound: {fileID: 0}
+  turretType: 0
