@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] AudioClip hitSound, deathSound, goalSound;
 
     private Vector3 soundPlayedAtCamera;
+    private bool gotShot;
 
     void Start()
     {
@@ -56,9 +57,24 @@ public class Enemy : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    public IEnumerator DealtSplashDamage(float rateOfFire, float damageDealt)
+    {
+        gotShot = true;
+        AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
+        Instantiate(hitExplosion, transform.position + new Vector3(0f, 0f, 2f), Quaternion.identity);
+        hitPoints -= damageDealt;
+        yield return new WaitForSecondsRealtime(rateOfFire);
+        gotShot = false;
+    }
+
     public float Damage
     {
         get { return damage; }
         set { damage = value; }
+    }
+
+    public bool GetGotShot()
+    {
+        return gotShot;
     }
 }

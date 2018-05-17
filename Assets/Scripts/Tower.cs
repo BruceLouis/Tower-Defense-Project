@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour {
     [SerializeField] [Range(0f, 100f)] float range;
     [SerializeField] AudioClip laserSound;
 
-    private enum TurretType { projectile, machineGun, laser};
+    private enum TurretType { projectile, machineGun, laser, splash};
     [SerializeField] TurretType turretType;
     
     private Transform targetEnemy;
@@ -66,7 +66,10 @@ public class Tower : MonoBehaviour {
     void Fire()
     {
         float distance = Vector3.Distance(transform.position, targetEnemy.transform.position);
-        objectToPan.LookAt(targetEnemy);
+        if (turretType != TurretType.splash)
+        {
+            objectToPan.LookAt(targetEnemy);
+        }
         if (!isShooting && distance < range)
         {
             if (turretType == TurretType.projectile)
@@ -154,5 +157,20 @@ public class Tower : MonoBehaviour {
     {
         get { return cost; }
         set { cost = value; }
+    }
+
+    public float GetRange()
+    {
+        return range;
+    }
+
+    public float GetRateOfFire()
+    {
+        return rateOfFire;
+    }
+
+    public float GetBulletPower()
+    {
+        return bulletPower;
     }
 }

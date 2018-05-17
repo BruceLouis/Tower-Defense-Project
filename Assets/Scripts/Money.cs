@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class Money : MonoBehaviour {
 
     [SerializeField] Text moneyText;
+    [SerializeField] float startAmount;
     private float amount;
 
     // Use this for initialization
     void Start()
     {
-        amount = 150f;
+        amount = startAmount;
         moneyText.text = "Money: " + amount.ToString();
     }
 
