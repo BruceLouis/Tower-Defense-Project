@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4552624526317502}
   - component: {fileID: 33258596072620630}
   - component: {fileID: 23093224320209986}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Church
   m_TagString: Untagged
   m_Icon: {fileID: 0}

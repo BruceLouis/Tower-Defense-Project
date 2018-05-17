@@ -8,15 +8,27 @@ public class Base : MonoBehaviour {
     [SerializeField] float hitPoints;
     [SerializeField] Slider hpBar;
 
-    private float maxHP;
-    private float sliderValue;
-    private bool settingMaxHP;
+    private GameDirector gameDirector;
+    private float maxHP, sliderValue;
+    private bool settingMaxHP, gameOver;
 
     // Use this for initialization
     void Start()
     {
+        gameDirector = FindObjectOfType<GameDirector>();
+
         settingMaxHP = true;
+        gameOver = false;
         SetHP(hitPoints);
+    }
+
+    void Update()
+    {
+        if (hitPoints <= 0f && !gameOver)
+        {
+            StartCoroutine(gameDirector.GameOverSon());
+            gameOver = true;
+        }
     }
 
     void OnTriggerEnter(Collider collider)
@@ -44,6 +56,11 @@ public class Base : MonoBehaviour {
         }
         sliderValue = currentHP / maxHP;
         hpBar.value = sliderValue;
+    }
+    
+    public bool GetGameOver()
+    {
+        return gameOver;
     }
 }
 

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33997105889621722}
   - component: {fileID: 23438635774484358}
   - component: {fileID: 64394145929673504}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grey Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

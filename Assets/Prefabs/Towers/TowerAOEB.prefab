@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4707268275124422}
   - component: {fileID: 33739449257990912}
   - component: {fileID: 23630404150240226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423978297539242}
   - component: {fileID: 114047755828883348}
-  m_Layer: 29
+  m_Layer: 2
   m_Name: TurretObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4236482014346550}
   - component: {fileID: 198891829784830952}
   - component: {fileID: 199776311939493064}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CFX3_Vortex_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4494174964197378}
   - component: {fileID: 33256264502491976}
   - component: {fileID: 23310661380076986}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4719886117630976}
   - component: {fileID: 198668374750157402}
   - component: {fileID: 199409763507859164}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CFX3 Pulse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4426978845698658}
   - component: {fileID: 33013069117882782}
   - component: {fileID: 23063720905288314}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4001412825582678}
-  m_Layer: 29
+  m_Layer: 2
   m_Name: BaseObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 135118998764380482}
   - component: {fileID: 114971442429950048}
   - component: {fileID: 114565274427850588}
-  m_Layer: 29
+  m_Layer: 2
   m_Name: TowerAOEB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aoeCloud: {fileID: 198891829784830952}
-  enemies: []
 --- !u!114 &114971442429950048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -421,13 +420,13 @@ MonoBehaviour:
   bullets: {fileID: 0}
   laserLine: {fileID: 0}
   machineGunRifles: []
+  laserSound: {fileID: 0}
+  range: 57.5
   bulletSpeed: 3000
   bulletPower: 10
   rateOfFire: 0.75
   cost: 50
   yOffset: 0
-  range: 57.5
-  laserSound: {fileID: 0}
   turretType: 3
 --- !u!135 &135118998764380482
 SphereCollider:

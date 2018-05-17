@@ -10,9 +10,9 @@ public class Tower : MonoBehaviour {
     [SerializeField] Bullet bullets;
     [SerializeField] LineRenderer laserLine;
     [SerializeField] GameObject[] machineGunRifles;
-    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;
-    [SerializeField] [Range(0f, 100f)] float range;
     [SerializeField] AudioClip laserSound;
+    [SerializeField] [Range(0f, 100f)] float range;
+    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;
 
     private enum TurretType { projectile, machineGun, laser, splash};
     [SerializeField] TurretType turretType;

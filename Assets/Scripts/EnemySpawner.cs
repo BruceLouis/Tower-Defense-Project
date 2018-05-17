@@ -5,27 +5,36 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-    [Tooltip("size of the array represents number of waves")] [SerializeField] int[] numEnemies = new int[3];
+    [Tooltip("size of the array represents number of waves")] [SerializeField] int[] numEnemies;
     [Tooltip("element in the array represents wave number")] [SerializeField] [Range(0.25f, 10f)] float[] spawnRate;
     [Tooltip("element in the array represents wave number")] [SerializeField] Enemy[] enemies;
 
     [SerializeField] Transform spawnPosition;
-    [SerializeField] float spawnStartDelay, waveDelay;    
+    [SerializeField] float spawnStartDelay, waveDelay, victoryDelay;
+
+    private IEnumerator spawnEnemies;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        spawnEnemies = SpawnEnemies();
         StartCoroutine(SpawnStartDelay(spawnStartDelay));
     }
 
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
+        if (FindObjectOfType<Base>().GetGameOver())
+        {
+            StopCoroutine(spawnEnemies);
+        }
     }
 
     IEnumerator SpawnStartDelay(float time)
     {
         yield return new WaitForSecondsRealtime(time);
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(spawnEnemies);
     }
 
     IEnumerator SpawnEnemies()
@@ -41,5 +50,7 @@ public class EnemySpawner : MonoBehaviour {
             }
             yield return new WaitForSecondsRealtime(waveDelay);
         }
+        yield return new WaitForSecondsRealtime(victoryDelay);
+        StartCoroutine(FindObjectOfType<GameDirector>().Victory());
     }
 }

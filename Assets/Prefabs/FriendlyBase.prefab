@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 114353143876157032}
   - component: {fileID: 65784369434088064}
   m_Layer: 0
-  m_Name: EnemyFinishLine
+  m_Name: FriendlyBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,15 +824,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566490388353334}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: 0, z: -30}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -220, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4045382933460758}
   - {fileID: 4350011633366780}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4452561232512284
 Transform:
   m_ObjectHideFlags: 1
@@ -3067,8 +3067,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 60.75612, y: 31.563904, z: 53.82408}
-  m_Center: {x: 27.511742, y: 14.083221, z: 8.657082}
+  m_Size: {x: 60.75612, y: 31.563904, z: 51.02298}
+  m_Center: {x: 27.511742, y: 14.083221, z: 0.051903725}
 --- !u!114 &114353143876157032
 MonoBehaviour:
   m_ObjectHideFlags: 1

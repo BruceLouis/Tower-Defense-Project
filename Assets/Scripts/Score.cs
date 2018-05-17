@@ -8,8 +8,8 @@ public class Score : MonoBehaviour {
     [SerializeField] Text scoreText;
     private float points;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         scoreText.text = "Score: " + points.ToString();	
 	}
 	

@@ -494,7 +494,7 @@ MonoBehaviour:
   goalExplosion: {fileID: 198953160176805540, guid: 14e19d5920607c7458002345814288a7,
     type: 2}
   hitPoints: 50
-  damage: 10
+  damage: 50
   scoreValue: 10
   cashValue: 5
   hitSound: {fileID: 8300000, guid: aa00a4d67c88b0c41a244b85c49de6f5, type: 3}
