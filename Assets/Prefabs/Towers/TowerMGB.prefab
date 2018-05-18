@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 33076942915266626}
   - component: {fileID: 64368925226000452}
   - component: {fileID: 23856314013252126}
-  - component: {fileID: 114122156706051544}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -58,7 +57,6 @@ GameObject:
   - component: {fileID: 33783307694026280}
   - component: {fileID: 64456300746477402}
   - component: {fileID: 23712136644863410}
-  - component: {fileID: 114510980779049634}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -156,7 +154,6 @@ GameObject:
   - component: {fileID: 33484297010154760}
   - component: {fileID: 64231234842833188}
   - component: {fileID: 23300660052220758}
-  - component: {fileID: 114935903735295444}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -240,7 +237,6 @@ GameObject:
   - component: {fileID: 33204868314657322}
   - component: {fileID: 64561462343958432}
   - component: {fileID: 23141532223382578}
-  - component: {fileID: 114986995962729132}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -935,17 +931,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114122156706051544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1067999531078736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114452041165585330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -959,46 +944,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 4426100029946438}
   bullets: {fileID: 0}
+  laserLine: {fileID: 0}
   machineGunRifles:
   - {fileID: 1242609013006442}
   - {fileID: 1803146411997422}
+  laserSound: {fileID: 0}
+  range: 27.5
   bulletSpeed: 3000
   bulletPower: 5
   rateOfFire: 0.25
-  cost: 100
+  cost: 200
   yOffset: -0.75
-  range: 27.5
   turretType: 1
---- !u!114 &114510980779049634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1073771021642464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114935903735295444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1622241995667306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114986995962729132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1787164160842656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 

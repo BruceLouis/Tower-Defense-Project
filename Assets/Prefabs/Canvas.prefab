@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1043587123645152
 GameObject:
   m_ObjectHideFlags: 1
@@ -312,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1289640409851402
 GameObject:
   m_ObjectHideFlags: 1
@@ -586,7 +586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1448824876646540
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,7 +892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1783848846255436
 GameObject:
   m_ObjectHideFlags: 1
@@ -1871,7 +1871,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cost: 50'
+  m_Text: 'Cost: 100'
 --- !u!114 &114398240421013644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2093,7 +2093,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: 600'
+  m_Text: 'Money: 500'
 --- !u!114 &114460864152159092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2248,7 +2248,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 114616331555513554}
   m_FillRect: {fileID: 224179413435976402}
   m_HandleRect: {fileID: 224873519585337412}
@@ -2457,7 +2457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 114446898792501460}
-  startAmount: 100
+  startAmount: 200
 --- !u!114 &114569779168809904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3647,7 +3647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 2275'
+  m_Text: 'Score: 2500'
 --- !u!222 &222011784482492032
 CanvasRenderer:
   m_ObjectHideFlags: 1

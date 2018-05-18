@@ -15,14 +15,12 @@ public class Tile : MonoBehaviour {
             if (!spotTaken && !EventSystem.current.IsPointerOverGameObject()) //event system to make sure tower don't get placed when in menu
             {
                 FindObjectOfType<TowerFactory>().AddTower(this);
-                Debug.Log("place tower");
             }
             else
             {
                 Debug.Log("cant place tower");
             }
         }
-        Debug.Log(gameObject.name);
     }
 
     public void SetPathingTile()

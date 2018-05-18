@@ -16,10 +16,9 @@ public class Base : MonoBehaviour {
     void Start()
     {
         gameDirector = FindObjectOfType<GameDirector>();
-
-        settingMaxHP = true;
+        
         gameOver = false;
-        SetHP(hitPoints);
+        maxHP = hitPoints;
     }
 
     void Update()
@@ -41,19 +40,14 @@ public class Base : MonoBehaviour {
         }
     }
 
-    public void GotHit(float damage)
+    void GotHit(float damage)
     {
         hitPoints -= damage;
         SetHP(hitPoints);
     }
     
-    public void SetHP(float currentHP)
+    void SetHP(float currentHP)
     {
-        if (settingMaxHP)
-        {
-            maxHP = currentHP;
-            settingMaxHP = false;
-        }
         sliderValue = currentHP / maxHP;
         hpBar.value = sliderValue;
     }

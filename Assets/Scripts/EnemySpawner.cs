@@ -50,7 +50,11 @@ public class EnemySpawner : MonoBehaviour {
             }
             yield return new WaitForSecondsRealtime(waveDelay);
         }
-        yield return new WaitForSecondsRealtime(victoryDelay);
-        StartCoroutine(FindObjectOfType<GameDirector>().Victory());
+
+        if (numEnemies[numEnemies.Length - 1] <= 0)
+        {
+            yield return new WaitForSecondsRealtime(victoryDelay);
+            StartCoroutine(FindObjectOfType<GameDirector>().Victory());
+        }
     }
 }

@@ -102,7 +102,7 @@ MonoBehaviour:
       bloom:
         intensity: 0.45
         threshold: 0.46
-        softKnee: 0.371
+        softKnee: 0.333
         radius: 1
         antiFlicker: 0
       lensDirt:
@@ -121,7 +121,7 @@ MonoBehaviour:
         neutralWhiteClip: 10
       basic:
         postExposure: 0.1
-        temperature: -8
+        temperature: -15
         tint: 1
         hueShift: 1
         saturation: 1
@@ -322,7 +322,7 @@ MonoBehaviour:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.288
+      intensity: 0.295
       smoothness: 0.768
       roundness: 1
       mask: {fileID: 0}
