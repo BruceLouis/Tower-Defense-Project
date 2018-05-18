@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour {
 
-    [SerializeField] GameObject friendlyTile, enemyTile;
+    [SerializeField] GameObject[] friendlyTiles, enemyTiles;
     private bool spotTaken = false, isFriendly = true;
 
     void OnMouseOver()
@@ -27,8 +27,14 @@ public class Tile : MonoBehaviour {
 
     public void SetPathingTile()
     {
-        enemyTile.SetActive(true);
-        friendlyTile.SetActive(false);
+        foreach (GameObject friendlyTile in friendlyTiles)
+        {
+            friendlyTile.SetActive(false);
+        }
+        foreach (GameObject enemyTile in enemyTiles)
+        {
+            enemyTile.SetActive(true);
+        }
         spotTaken = true;
     }
 
