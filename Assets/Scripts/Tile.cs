@@ -8,12 +8,6 @@ public class Tile : MonoBehaviour {
     [SerializeField] GameObject friendlyTile, enemyTile;
     private bool spotTaken = false, isFriendly = true;
 
-    // Update is called once per frame
-    void Update ()
-    {
-
-    }
-    
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
