@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 
     [SerializeField] float upperX, lowerX;
+    [SerializeField] float upperY, lowerY;
     [SerializeField] float upperZ, lowerZ;
     [SerializeField] float speed;
 
@@ -32,8 +33,8 @@ public class MainCamera : MonoBehaviour {
         float newZ = Mathf.Clamp(transform.position.z + zOffset, lowerZ, upperZ);
 
         yThrow = Input.GetAxis("Mouse ScrollWheel");
-        float yOffset = -yThrow * (speed * 10f) * Time.deltaTime;
-        float newY = transform.position.y + yOffset;
+        float yOffset = -yThrow * (speed * 20f) * Time.deltaTime;
+        float newY = Mathf.Clamp(transform.position.y + yOffset, lowerY, upperY);
 
         transform.position = new Vector3(newX, newY, newZ);
     }

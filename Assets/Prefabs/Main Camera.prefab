@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upperX: -50
   lowerX: -175
+  upperY: 100
+  lowerY: 5
   upperZ: 200
   lowerZ: -50
   speed: 50

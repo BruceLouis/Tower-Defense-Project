@@ -76,5 +76,6 @@ MonoBehaviour:
   - {fileID: 114670253241884000, guid: 1612aa83343bb2849bece5c985eb6ea4, type: 2}
   spawnPosition: {fileID: 0}
   spawnStartDelay: 5
-  waveDelay: 3
+  waveDelay: 1
   victoryDelay: 4
+  enemiesList: []

@@ -413,7 +413,7 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletPower: 10
   rateOfFire: 1
-  cost: 50
+  cost: 200
   yOffset: 0
   turretType: 3
 --- !u!135 &135633488858457900

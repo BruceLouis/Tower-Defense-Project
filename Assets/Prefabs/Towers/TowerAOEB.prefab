@@ -36,7 +36,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4423978297539242}
-  - component: {fileID: 114047755828883348}
   m_Layer: 2
   m_Name: TurretObj
   m_TagString: Untagged
@@ -382,17 +381,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1159856022123786}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114047755828883348
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167917581675994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114565274427850588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -425,7 +413,7 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletPower: 10
   rateOfFire: 0.75
-  cost: 50
+  cost: 400
   yOffset: 0
   turretType: 3
 --- !u!135 &135118998764380482

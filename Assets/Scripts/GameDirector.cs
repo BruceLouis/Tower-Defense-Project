@@ -11,7 +11,29 @@ public class GameDirector : MonoBehaviour {
     [SerializeField] Text gameOverText, victoryText;
     [SerializeField] Button playAgainButton, nextLevelButton;
 
+    private EnemySpawner enemySpawner;
     private bool active;
+
+    void Start()
+    {
+        enemySpawner = FindObjectOfType<EnemySpawner>();    
+    }
+
+    void Update()
+    {
+        CheckForVictory();
+    }
+
+    void CheckForVictory()
+    {
+        int enemyCountInList = enemySpawner.GetEnemiesList().Count;
+        int enemiesLeftToSpawn = enemySpawner.GetNumEnemies()[enemySpawner.GetNumEnemies().Length - 1];
+
+        if (enemyCountInList <= 0 && enemiesLeftToSpawn <= 0 && !FindObjectOfType<Base>().GetGameOver())
+        {
+            StartCoroutine(Victory());
+        }
+    }
 
     public void ActivateMenu()
     {
@@ -40,6 +62,7 @@ public class GameDirector : MonoBehaviour {
 
     public IEnumerator Victory()
     {
+        yield return new WaitForSecondsRealtime(4f);
         victoryText.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(1f);
         nextLevelButton.gameObject.SetActive(true);

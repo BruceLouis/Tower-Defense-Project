@@ -13,11 +13,13 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] float spawnStartDelay, waveDelay, victoryDelay;
 
     private IEnumerator spawnEnemies;
+    public List<Enemy> enemiesList;
 
 	// Use this for initialization
 	void Start ()
     {
         spawnEnemies = SpawnEnemies();
+        enemiesList = new List<Enemy>();
         StartCoroutine(SpawnStartDelay(spawnStartDelay));
     }
 
@@ -29,6 +31,7 @@ public class EnemySpawner : MonoBehaviour {
         {
             StopCoroutine(spawnEnemies);
         }
+        enemiesList.RemoveAll(enemy => enemy == null);
     }
 
     IEnumerator SpawnStartDelay(float time)
@@ -45,16 +48,22 @@ public class EnemySpawner : MonoBehaviour {
             {
                 Enemy enemy = Instantiate(enemies[i], spawnPosition.position, Quaternion.identity) as Enemy;
                 enemy.transform.parent = transform;
+                enemiesList.Add(enemy);
                 numEnemies[i]--;
                 yield return new WaitForSecondsRealtime(spawnRate[i]);
             }
+            yield return new WaitUntil( () => enemiesList.Count <= 0);
             yield return new WaitForSecondsRealtime(waveDelay);
         }
+    }
 
-        if (numEnemies[numEnemies.Length - 1] <= 0)
-        {
-            yield return new WaitForSecondsRealtime(victoryDelay);
-            StartCoroutine(FindObjectOfType<GameDirector>().Victory());
-        }
+    public List<Enemy> GetEnemiesList()
+    {
+        return enemiesList;
+    }
+
+    public int[] GetNumEnemies()
+    {
+        return numEnemies;
     }
 }

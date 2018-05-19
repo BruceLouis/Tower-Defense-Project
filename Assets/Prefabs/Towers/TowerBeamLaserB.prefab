@@ -610,13 +610,13 @@ MonoBehaviour:
   bullets: {fileID: 0}
   laserLine: {fileID: 120624359076678068}
   machineGunRifles: []
+  laserSound: {fileID: 8300000, guid: 77307cd3b2a20e148a21cd86f93281f2, type: 3}
+  range: 40
   bulletSpeed: 3000
   bulletPower: 0.75
   rateOfFire: 0.01
-  cost: 100
+  cost: 300
   yOffset: -1
-  range: 40
-  laserSound: {fileID: 8300000, guid: 77307cd3b2a20e148a21cd86f93281f2, type: 3}
   turretType: 2
 --- !u!120 &120624359076678068
 LineRenderer:
