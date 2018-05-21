@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] float spawnStartDelay, waveDelay, victoryDelay;
 
     private IEnumerator spawnEnemies;
-    public List<Enemy> enemiesList;
+    private List<Enemy> enemiesList;
 
 	// Use this for initialization
 	void Start ()

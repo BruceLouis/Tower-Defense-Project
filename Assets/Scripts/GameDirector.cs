@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour {
 
-    [SerializeField] GameObject towerMenu;
-    [SerializeField] AudioClip baseDestroyed;
-    [SerializeField] Text gameOverText, victoryText;
+    [SerializeField] GameObject towerMenu, gameOverPanel, victoryPanel;
+    [SerializeField] AudioClip baseDestroyed, youLoseSound;
     [SerializeField] Button playAgainButton, nextLevelButton;
 
     private EnemySpawner enemySpawner;
@@ -55,7 +54,8 @@ public class GameDirector : MonoBehaviour {
     {
         AudioSource.PlayClipAtPoint(baseDestroyed, Camera.main.transform.position + new Vector3(0f, 0f, -10f));
         yield return new WaitForSecondsRealtime(3f);
-        gameOverText.gameObject.SetActive(true);
+        gameOverPanel.SetActive(true);
+        AudioSource.PlayClipAtPoint(youLoseSound, Camera.main.transform.position);
         yield return new WaitForSecondsRealtime(1f);
         playAgainButton.gameObject.SetActive(true);
     }
@@ -63,7 +63,7 @@ public class GameDirector : MonoBehaviour {
     public IEnumerator Victory()
     {
         yield return new WaitForSecondsRealtime(4f);
-        victoryText.gameObject.SetActive(true);
+        victoryPanel.SetActive(true);
         yield return new WaitForSecondsRealtime(1f);
         nextLevelButton.gameObject.SetActive(true);
     }

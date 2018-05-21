@@ -951,7 +951,7 @@ MonoBehaviour:
   laserSound: {fileID: 0}
   range: 27.5
   bulletSpeed: 3000
-  bulletPower: 5
+  bulletPower: 7.5
   rateOfFire: 0.25
   cost: 200
   yOffset: -0.75

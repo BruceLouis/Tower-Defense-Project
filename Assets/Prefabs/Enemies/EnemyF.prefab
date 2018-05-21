@@ -487,9 +487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5fd8ec28b2f054bb984ac5ce8e222d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyExplosion: {fileID: 198985793848335378, guid: fb986059cbcd66442b6c0ca8d7537092,
+  enemyExplosion: {fileID: 198985793848335378, guid: b9a9a79dedfc89344bc53c27f442a6f1,
     type: 2}
-  hitExplosion: {fileID: 198916867993987420, guid: 894520b38e9a33441937043eb1b4c0f2,
+  hitExplosion: {fileID: 198916867993987420, guid: 176a575cf50f85147be89c490d59a5bc,
     type: 2}
   goalExplosion: {fileID: 198325920545147728, guid: 9d03bf2a0b586c14082136a1f5369b79,
     type: 2}

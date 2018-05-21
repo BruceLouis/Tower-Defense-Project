@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour {
         {
             AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
         }
-        Instantiate(hitExplosion, transform.position + new Vector3(0f, 0f, 2f), Quaternion.identity);
+        Instantiate(hitExplosion, transform.position, Quaternion.identity);
         hitPoints -= damageDealt;
     }
 
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour {
     {
         gotShot = true;
         AudioSource.PlayClipAtPoint(hitSound, soundPlayedAtCamera);
-        Instantiate(hitExplosion, transform.position + new Vector3(0f, 0f, 2f), Quaternion.identity);
+        Instantiate(hitExplosion, transform.position, Quaternion.identity);
         hitPoints -= damageDealt;
         yield return new WaitForSecondsRealtime(rateOfFire);
         gotShot = false;

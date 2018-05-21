@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerMenu: {fileID: 0}
   baseDestroyed: {fileID: 8300000, guid: b4e9c53e0653e6e4e96b7212013ab15d, type: 3}
+  youLoseSound: {fileID: 8300000, guid: 79be0963200be8143be71fb492825fce, type: 3}
   gameOverText: {fileID: 0}
   victoryText: {fileID: 0}
   playAgainButton: {fileID: 0}

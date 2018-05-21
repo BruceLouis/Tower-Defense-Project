@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5fd8ec28b2f054bb984ac5ce8e222d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyExplosion: {fileID: 198985793848335378, guid: fb986059cbcd66442b6c0ca8d7537092,
+  enemyExplosion: {fileID: 198985793848335378, guid: 6667f0be312108940b5c09daf7641028,
     type: 2}
   hitExplosion: {fileID: 198916867993987420, guid: 39e5ad2a7f7e71049869374171eeff9b,
     type: 2}
