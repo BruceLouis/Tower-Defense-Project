@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1908616116016666}
   m_IsPrefabParent: 1
+--- !u!1 &1294670347685456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4964189967158282}
+  - component: {fileID: 135298967726078258}
+  - component: {fileID: 114847935571754730}
+  m_Layer: 2
+  m_Name: AOECollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1297832046121824
 GameObject:
   m_ObjectHideFlags: 1
@@ -21,7 +38,7 @@ GameObject:
   - component: {fileID: 4762799462503680}
   - component: {fileID: 33155073754075222}
   - component: {fileID: 23764063758564576}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4911635423562192}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: TurretObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +70,7 @@ GameObject:
   - component: {fileID: 4990284290935628}
   - component: {fileID: 198878141415608008}
   - component: {fileID: 199563338440573320}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: CFX3 Pulse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4420428841137324}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: BaseObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +102,7 @@ GameObject:
   - component: {fileID: 4774745241282226}
   - component: {fileID: 33185265934610924}
   - component: {fileID: 23959850993269654}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +119,7 @@ GameObject:
   - component: {fileID: 4136250696297100}
   - component: {fileID: 198376975822173090}
   - component: {fileID: 199441941376240440}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: CFX3_Vortex_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +136,7 @@ GameObject:
   - component: {fileID: 4633897777895926}
   - component: {fileID: 33932269169911078}
   - component: {fileID: 23611175949556818}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Hexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,10 +151,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4017849542182968}
-  - component: {fileID: 135633488858457900}
   - component: {fileID: 114707659696956332}
-  - component: {fileID: 114071095557423156}
-  m_Layer: 2
+  - component: {fileID: 65858034844199878}
+  m_Layer: 10
   m_Name: TowerAOEA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +173,7 @@ Transform:
   - {fileID: 4420428841137324}
   - {fileID: 4911635423562192}
   - {fileID: 4136250696297100}
+  - {fileID: 4964189967158282}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -241,6 +258,19 @@ Transform:
   - {fileID: 4762799462503680}
   m_Father: {fileID: 4017849542182968}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4964189967158282
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294670347685456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4017849542182968}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4990284290935628
 Transform:
@@ -381,18 +411,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1879953353202848}
   m_Mesh: {fileID: 4300000, guid: 41f7b638bd7e7fb459fb00d7b58c5e21, type: 3}
---- !u!114 &114071095557423156
-MonoBehaviour:
+--- !u!65 &65858034844199878
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908616116016666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab412f6373c30b14c8baedfaaa7d3875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aoeCloud: {fileID: 198376975822173090}
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &114707659696956332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,6 +438,10 @@ MonoBehaviour:
   bullets: {fileID: 0}
   laserLine: {fileID: 0}
   machineGunRifles: []
+  upgradeColors:
+  - {fileID: 2100000, guid: a2b6533eb3409b444b1969bf7b4b1379, type: 2}
+  - {fileID: 2100000, guid: b5fdbb1d0f5374cd9925eab0238603fa, type: 2}
+  - {fileID: 2100000, guid: dc86aae0e079f864ea16033a77e4470c, type: 2}
   laserSound: {fileID: 0}
   range: 57.5
   bulletSpeed: 3000
@@ -415,13 +449,26 @@ MonoBehaviour:
   rateOfFire: 1
   cost: 200
   yOffset: 0
+  towerMugShot: {fileID: 21300000, guid: f81b5bde22c39a24e9be7585815073e7, type: 3}
   turretType: 3
---- !u!135 &135633488858457900
+--- !u!114 &114847935571754730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294670347685456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab412f6373c30b14c8baedfaaa7d3875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoeCloud: {fileID: 198376975822173090}
+--- !u!135 &135298967726078258
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1908616116016666}
+  m_GameObject: {fileID: 1294670347685456}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

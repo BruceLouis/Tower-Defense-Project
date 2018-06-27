@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Splash : MonoBehaviour
 {
-
     [SerializeField] ParticleSystem aoeCloud;
 
     private Tower tower;
@@ -15,10 +14,9 @@ public class Splash : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        tower = GetComponent<Tower>();
+        tower = GetComponentInParent<Tower>();
         aoeCloudProperties = aoeCloud.main;
-        aoeCloudProperties.startSize = tower.GetRange();
-        GetComponent<SphereCollider>().radius = tower.GetRange() * 0.1f;
+        UpdateAreaSize();
         isShooting = false;
         enemies = new List<Enemy>();
     }
@@ -50,5 +48,11 @@ public class Splash : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
         enemies.Remove(collider.gameObject.GetComponentInParent<Enemy>());
-    }    
+    }
+
+    public void UpdateAreaSize()
+    {
+        aoeCloudProperties.startSize = tower.GetRange();
+        GetComponent<SphereCollider>().radius = tower.GetRange() * 0.1f;
+    }
 }

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4136072727659060}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33618650204023682}
   - component: {fileID: 64171892510502382}
   - component: {fileID: 23999200411522728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4021423110838508}
   - component: {fileID: 114531632561319930}
-  m_Layer: 29
+  - component: {fileID: 65557527957555488}
+  m_Layer: 10
   m_Name: TowerMGA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +72,7 @@ GameObject:
   - component: {fileID: 33544166914321610}
   - component: {fileID: 64548423561742286}
   - component: {fileID: 23654355404330692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4450237604784482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MachineGunEffectLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +102,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4090953440296340}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: TurretObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +119,7 @@ GameObject:
   - component: {fileID: 4237571102298964}
   - component: {fileID: 33037974677187352}
   - component: {fileID: 23641755303219248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +134,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4181191357152548}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +149,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4661961880870768}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: BaseObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +164,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4556450937124218}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MachineGunEffectRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +181,7 @@ GameObject:
   - component: {fileID: 4337035510593148}
   - component: {fileID: 33559540244372140}
   - component: {fileID: 23766746595907500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +199,7 @@ GameObject:
   - component: {fileID: 33297650639468798}
   - component: {fileID: 64490133743550868}
   - component: {fileID: 23854866084883156}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +216,7 @@ GameObject:
   - component: {fileID: 4268987346728992}
   - component: {fileID: 33559332134996640}
   - component: {fileID: 23125726096350306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +233,7 @@ GameObject:
   - component: {fileID: 4361591637874368}
   - component: {fileID: 33575386586631676}
   - component: {fileID: 23699175240018808}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +251,7 @@ GameObject:
   - component: {fileID: 33222467985013938}
   - component: {fileID: 64985613850424524}
   - component: {fileID: 23098236430150704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +268,7 @@ GameObject:
   - component: {fileID: 4441443712952504}
   - component: {fileID: 33747425183510174}
   - component: {fileID: 23680786583834190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,6 +932,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65557527957555488
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271592952027370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &114531632561319930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,6 +961,10 @@ MonoBehaviour:
   machineGunRifles:
   - {fileID: 1667720135439400}
   - {fileID: 1405507112873570}
+  upgradeColors:
+  - {fileID: 2100000, guid: a2b6533eb3409b444b1969bf7b4b1379, type: 2}
+  - {fileID: 2100000, guid: b5fdbb1d0f5374cd9925eab0238603fa, type: 2}
+  - {fileID: 2100000, guid: dc86aae0e079f864ea16033a77e4470c, type: 2}
   laserSound: {fileID: 0}
   range: 25
   bulletSpeed: 3000
@@ -955,4 +972,5 @@ MonoBehaviour:
   rateOfFire: 0.5
   cost: 100
   yOffset: -0.75
+  towerMugShot: {fileID: 21300000, guid: 28a0dcdf261471f4d91a612424cc07ae, type: 3}
   turretType: 1

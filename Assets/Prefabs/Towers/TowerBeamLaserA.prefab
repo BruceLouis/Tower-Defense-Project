@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4174665621471902}
   - component: {fileID: 33419368716448116}
   - component: {fileID: 23850733524481018}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4753644496497744}
   - component: {fileID: 33118725112602658}
   - component: {fileID: 23509289410654394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4524798384732356}
   - component: {fileID: 33905267460022864}
   - component: {fileID: 23149078891458876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4926046346581074}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4049475667458528}
   - component: {fileID: 114711560147468474}
-  m_Layer: 29
+  - component: {fileID: 65414728609891908}
+  m_Layer: 10
   m_Name: TowerBeamLaserA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +102,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4653914904106488}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: TurretObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +119,7 @@ GameObject:
   - component: {fileID: 4901695246016850}
   - component: {fileID: 33527960357674940}
   - component: {fileID: 23720500202877136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +136,7 @@ GameObject:
   - component: {fileID: 4706241406237754}
   - component: {fileID: 33905275319968720}
   - component: {fileID: 23537456790146422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +153,7 @@ GameObject:
   - component: {fileID: 4397864476600084}
   - component: {fileID: 33548131581940388}
   - component: {fileID: 23461875144702212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4839401604838040}
   - component: {fileID: 120865333714254022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LaserShootEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +184,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4945979428536680}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: BaseObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,6 +596,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721236522793170}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65414728609891908
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486162737418866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &114711560147468474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,6 +623,10 @@ MonoBehaviour:
   bullets: {fileID: 0}
   laserLine: {fileID: 120865333714254022}
   machineGunRifles: []
+  upgradeColors:
+  - {fileID: 2100000, guid: a2b6533eb3409b444b1969bf7b4b1379, type: 2}
+  - {fileID: 2100000, guid: b5fdbb1d0f5374cd9925eab0238603fa, type: 2}
+  - {fileID: 2100000, guid: dc86aae0e079f864ea16033a77e4470c, type: 2}
   laserSound: {fileID: 8300000, guid: 77307cd3b2a20e148a21cd86f93281f2, type: 3}
   range: 40
   bulletSpeed: 3000
@@ -617,6 +634,7 @@ MonoBehaviour:
   rateOfFire: 0.01
   cost: 150
   yOffset: -1
+  towerMugShot: {fileID: 21300000, guid: 2a5bc553995476945a99c948644eb75f, type: 3}
   turretType: 2
 --- !u!120 &120865333714254022
 LineRenderer:

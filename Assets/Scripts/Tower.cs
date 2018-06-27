@@ -10,25 +10,29 @@ public class Tower : MonoBehaviour {
     [SerializeField] Bullet bullets;
     [SerializeField] LineRenderer laserLine;
     [SerializeField] GameObject[] machineGunRifles;
+    [SerializeField] Material[] upgradeColors;
     [SerializeField] AudioClip laserSound;
     [SerializeField] [Range(0f, 100f)] float range;
-    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;
+    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;    
+    [SerializeField] Sprite towerMugShot;
 
-    private enum TurretType { projectile, machineGun, laser, splash};
-    [SerializeField] TurretType turretType;
+    public enum TurretType { projectile, machineGun, laser, splash};
+    public TurretType turretType;
     
     private Transform targetEnemy;
     private bool isShooting, isMakingNoise;
+    private int upgradeLevel = 0, maxUpgrades = 2;
 
 	// Use this for initialization
 	void Start ()
     {
         isShooting = false;
         isMakingNoise = false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        UpgradeTowerAppearance();
+    }
+    
+    // Update is called once per frame
+    void Update ()
     {
         SetTargetEnemy();
         if (targetEnemy)
@@ -66,7 +70,7 @@ public class Tower : MonoBehaviour {
     void Fire()
     {
         float distance = Vector3.Distance(transform.position, targetEnemy.transform.position);
-        if (turretType != TurretType.splash)
+        if (turretType != TurretType.splash && distance < range)
         {
             objectToPan.LookAt(targetEnemy);
         }
@@ -145,11 +149,54 @@ public class Tower : MonoBehaviour {
         isMakingNoise = false;
     }
 
+    void UpgradeTowerAppearance()
+    {
+        switch (turretType)
+        {
+            case TurretType.projectile:
+                transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the sphere renderer in the turret object
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the base renderer in the base object
+                break;
+            case TurretType.machineGun:
+                transform.GetChild(1).GetChild(0).GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the cube renderer in the turret object
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the base renderer in the base object
+                break;
+            case TurretType.laser:
+                Transform stripesParent = transform.GetChild(1).GetChild(0);
+                foreach (Transform stripes in stripesParent)
+                {
+                    stripes.GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the stripes of the cube renderer
+                }
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the base renderer in the base object
+                break;
+            case TurretType.splash:
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().material = upgradeColors[upgradeLevel]; //obtain the base renderer in the base object
+                break;
+        }
+    }
+
     void MachineGunFlash(bool active)
     {
         foreach (GameObject machineGun in machineGunRifles)
         {
             machineGun.SetActive(active);
+        }
+    }
+
+    public void TowerUpgrade()
+    {
+        if (upgradeLevel < maxUpgrades)
+        {
+            upgradeLevel++;
+            bulletPower *= 1.5f;
+            bulletSpeed *= 1.5f;
+            range *= 1.125f;
+            rateOfFire *= 0.75f;
+            UpgradeTowerAppearance();
+            if (turretType == TurretType.splash)
+            {
+                GetComponentInChildren<Splash>().UpdateAreaSize();
+            }
         }
     }
 
@@ -172,5 +219,20 @@ public class Tower : MonoBehaviour {
     public float GetBulletPower()
     {
         return bulletPower;
+    }
+
+    public TurretType GetTurretType()
+    {
+        return turretType;
+    }
+
+    public int GetUpgradeLevel()
+    {
+        return upgradeLevel;
+    }
+
+    public Sprite GetTowerMugShot()
+    {
+        return towerMugShot;
     }
 }
