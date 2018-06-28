@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114531632561319930}
   - component: {fileID: 65557527957555488}
   m_Layer: 10
-  m_Name: TowerMGA
+  m_Name: MachineGunTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -970,7 +970,10 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletPower: 5
   rateOfFire: 0.5
-  cost: 100
+  cost: 150
   yOffset: -0.75
+  upgradeCost:
+  - 200
+  - 400
   towerMugShot: {fileID: 21300000, guid: 28a0dcdf261471f4d91a612424cc07ae, type: 3}
   turretType: 1

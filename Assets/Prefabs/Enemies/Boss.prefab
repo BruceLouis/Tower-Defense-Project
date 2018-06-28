@@ -262,7 +262,7 @@ MonoBehaviour:
     type: 2}
   goalExplosion: {fileID: 198325920545147728, guid: 9d03bf2a0b586c14082136a1f5369b79,
     type: 2}
-  hitPoints: 10000
+  hitPoints: 7500
   damage: 500
   scoreValue: 100
   cashValue: 30

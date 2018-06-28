@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 114711560147468474}
   - component: {fileID: 65414728609891908}
   m_Layer: 10
-  m_Name: TowerBeamLaserA
+  m_Name: LaserTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,8 +632,11 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletPower: 0.5
   rateOfFire: 0.01
-  cost: 150
+  cost: 200
   yOffset: -1
+  upgradeCost:
+  - 300
+  - 600
   towerMugShot: {fileID: 21300000, guid: 2a5bc553995476945a99c948644eb75f, type: 3}
   turretType: 2
 --- !u!120 &120865333714254022

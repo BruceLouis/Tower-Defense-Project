@@ -13,19 +13,22 @@ public class Tower : MonoBehaviour {
     [SerializeField] Material[] upgradeColors;
     [SerializeField] AudioClip laserSound;
     [SerializeField] [Range(0f, 100f)] float range;
-    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;    
+    [SerializeField] float bulletSpeed, bulletPower, rateOfFire, cost, yOffset;
+    [SerializeField] float[] upgradeCost;
     [SerializeField] Sprite towerMugShot;
 
     public enum TurretType { projectile, machineGun, laser, splash};
     public TurretType turretType;
     
     private Transform targetEnemy;
+    private Money money;
     private bool isShooting, isMakingNoise;
     private int upgradeLevel = 0, maxUpgrades = 2;
 
 	// Use this for initialization
 	void Start ()
     {
+        money = FindObjectOfType<Money>();
         isShooting = false;
         isMakingNoise = false;
         UpgradeTowerAppearance();
@@ -185,8 +188,17 @@ public class Tower : MonoBehaviour {
 
     public void TowerUpgrade()
     {
+        try
+        {
+            if (money.GetMoney() < upgradeCost[upgradeLevel]) { return; }
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            Debug.LogWarning("no more upgrade levels");
+        }
         if (upgradeLevel < maxUpgrades)
         {
+            money.PaidMoney(upgradeCost[upgradeLevel]);
             upgradeLevel++;
             bulletPower *= 1.5f;
             bulletSpeed *= 1.5f;
@@ -221,14 +233,19 @@ public class Tower : MonoBehaviour {
         return bulletPower;
     }
 
-    public TurretType GetTurretType()
+    public float[] GetUpgradeCost()
     {
-        return turretType;
+        return upgradeCost;
     }
 
     public int GetUpgradeLevel()
     {
         return upgradeLevel;
+    }
+
+    public TurretType GetTurretType()
+    {
+        return turretType;
     }
 
     public Sprite GetTowerMugShot()

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour {
 
+    /* we use the breadth first search algorithm to determine how
+     * the enemies pathfind their way to their target
+     */
+
     Dictionary<Vector3Int, WayPoint> grid = new Dictionary<Vector3Int, WayPoint>();
     Queue<WayPoint> queue = new Queue<WayPoint>();
     List<WayPoint> path = new List<WayPoint>(); 
@@ -112,10 +116,6 @@ public class PathFinder : MonoBehaviour {
 
     public List<WayPoint> GetPath()
     {
-        //if (path.Count <= 0)
-        //{
-        //    CalculatePath();
-        //}
         return path;
     }
 }

@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 114707659696956332}
   - component: {fileID: 65858034844199878}
   m_Layer: 10
-  m_Name: TowerAOEA
+  m_Name: SplashTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,8 +447,11 @@ MonoBehaviour:
   bulletSpeed: 3000
   bulletPower: 10
   rateOfFire: 1
-  cost: 200
+  cost: 250
   yOffset: 0
+  upgradeCost:
+  - 400
+  - 800
   towerMugShot: {fileID: 21300000, guid: f81b5bde22c39a24e9be7585815073e7, type: 3}
   turretType: 3
 --- !u!114 &114847935571754730

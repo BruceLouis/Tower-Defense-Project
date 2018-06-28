@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] float speed;
     PathFinder pathFinder;
     List<WayPoint> path;
-    Enemy enemy;
     Vector3 targetPosition, direction;
     private float distance;
     private int index;
@@ -17,7 +16,6 @@ public class EnemyMovement : MonoBehaviour {
     {
         pathFinder = FindObjectOfType<PathFinder>();
         path = pathFinder.GetPath();
-        enemy = GetComponent<Enemy>();
         index = 0;
     }
 

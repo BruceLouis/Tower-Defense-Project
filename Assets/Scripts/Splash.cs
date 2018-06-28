@@ -8,7 +8,6 @@ public class Splash : MonoBehaviour
 
     private Tower tower;
     private ParticleSystem.MainModule aoeCloudProperties;
-    private bool isShooting;
     private List<Enemy> enemies;
 
     // Use this for initialization
@@ -17,7 +16,6 @@ public class Splash : MonoBehaviour
         tower = GetComponentInParent<Tower>();
         aoeCloudProperties = aoeCloud.main;
         UpdateAreaSize();
-        isShooting = false;
         enemies = new List<Enemy>();
     }
 

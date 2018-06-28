@@ -6,9 +6,15 @@ using UnityEngine.UI;
 
 public class MouseClickRayCaster : MonoBehaviour {
 
+    /* uses raycast that casts a line on where the mouse clicks on the scene
+     * then whoever comes in contact with the line from the raycast
+     * is what will determine what actions are done. for example, if it hits a tower component, 
+     * it activates panel and stores the selected tower in a variable
+    */
+
     private InfoPanel infoPanel;
     private Button upgradeButton, sellButton;
-    private Text nameText;
+    private Text nameText, upgradeCostText;
     private Image itemMugShot;
     private Tower selectedTower;
 
@@ -20,6 +26,7 @@ public class MouseClickRayCaster : MonoBehaviour {
         nameText = infoPanel.transform.GetChild(1).GetComponent<Text>(); //child index 1 has name of item text component
         upgradeButton = infoPanel.transform.GetChild(2).GetComponent<Button>(); //child index 2 has name of item text component
         sellButton = infoPanel.transform.GetChild(3).GetComponent<Button>(); //child index 3 has name of item text component
+        upgradeCostText = infoPanel.transform.GetChild(4).GetComponent<Text>(); //child index 4 has upgrade cost of item text component
 
         InfoPanelActivation(false);
     }
@@ -62,6 +69,7 @@ public class MouseClickRayCaster : MonoBehaviour {
         nameText.gameObject.SetActive(infoActive);
         upgradeButton.gameObject.SetActive(infoActive);
         sellButton.gameObject.SetActive(infoActive);
+        upgradeCostText.gameObject.SetActive(infoActive);
     }
 
     void TowerSelection(Tower tower)
@@ -74,7 +82,23 @@ public class MouseClickRayCaster : MonoBehaviour {
             case Tower.TurretType.machineGun:
                 nameText.text = "Machine Gun Tower";
                 break;
+            case Tower.TurretType.laser:
+                nameText.text = "Laser Tower";
+                break;
+            case Tower.TurretType.splash:
+                nameText.text = "Splash Tower";
+                break;
         }
+
+        try
+        {
+            upgradeCostText.text = "Upgrade Cost: " + tower.GetUpgradeCost()[tower.GetUpgradeLevel()];
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            upgradeCostText.text = "Max Upgrade";
+        }
+
         itemMugShot.sprite = tower.GetTowerMugShot();
     }
 
